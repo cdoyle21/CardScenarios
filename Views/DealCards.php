@@ -1,5 +1,5 @@
 <?php
-    namespace ShuffleCards;
+    namespace DealCards;
     include "../Controllers/Card.php";
     include "../Models/Deck.php";
     use Card\Card;
@@ -10,5 +10,5 @@
     // Cards in sequence
     echo "Cards: " . implode(', ', Card::cards());
 
-    // Shuffle Cards 
-    echo "Shuffled Cards: " . implode(', ', $deck->shuffle(Card::cards()));
+    // Shuffle cards then deal 7 cards to 4 people
+    print_r($deck->deal($deck->shuffle(Card::cards())));

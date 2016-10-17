@@ -26,4 +26,24 @@ class Deck
 
         return $cards;
     }
+
+    /**
+     * Prints shuffled cards and Deals seven cards to four people
+     *
+     * @param $shuffledCards
+     *
+     * @return array
+     */
+    public function deal($shuffledCards)
+    {
+        print_r($shuffledCards);
+        $hands = array(1 => array(), 2=>array(), 3=>array(), 4=>array());
+        for ($i = 0; $i < 7; $i++) {
+            $hands[1][] = array_shift($shuffledCards);
+            $hands[2][] = array_shift($shuffledCards);
+            $hands[3][] = array_shift($shuffledCards);
+            $hands[4][] = array_shift($shuffledCards);
+        }
+        return $hands;
+    }
 }
